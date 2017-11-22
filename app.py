@@ -1,5 +1,7 @@
 import numpy as np
 import pandas as pd
+from flask_cors import CORS
+
 from flask import request
 from utils import get_intersection,get_union
 from flask import Flask
@@ -10,6 +12,7 @@ import re
 import os
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
